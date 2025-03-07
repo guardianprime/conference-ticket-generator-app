@@ -1,5 +1,13 @@
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: localFont;
+  src: url("src/assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf");
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: localFont, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
