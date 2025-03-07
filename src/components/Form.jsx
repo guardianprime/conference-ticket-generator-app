@@ -1,13 +1,16 @@
-function Form() {
+function Form({ avatar, handleSubmit }) {
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <h1> Your Journey to Coding Conf 2025 Starts Here!</h1>
             <p>Secure your spot at next year's biggest coding conference.</p>
             <div>
                 <label> Upload Avatar</label>
-                <div> Drag and drop or click to upload
-                    Upload your photo (JPG or PNG, max size: 500KB).
+                <div>
+                    <input type="file" accept="image/png, image/jpeg" placeholder="Drag and drop or click to upload" />
                 </div>
+                {avatar && <div>
+                    <img src={URL.createObjectURL(avatar)} alt="user image" /></div>}
+                <span>Upload your photo (JPG or PNG, max size: 500KB).</span>
             </div>
             <div>
                 <label>Full Name</label>
