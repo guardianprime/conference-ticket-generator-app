@@ -4,21 +4,32 @@ import GenerateTicket from "./components/GenerateTicket";
 
 
 function App() {
-  const [userName, setUserName] = useState("");
-  const [userEmail, setUserEmail] = useState("");
-  const [userGithubName, setUserGithubName] = useState("");
-  const [avatar, setAvatar] = useState(null);
+  const [formData, setFormData] = useState({ userName: "", userEmail: "", userGithubName: "", avatar: null });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [avatarPreview, setAvatarPreview] = useState(null); // State for the preview URL
 
 
+  const handleChange = (event) => {
+    const { name, files } = event.target; // get the file array.
+    if (name === 'avatar' && files && files[0]) {
+      const file = files[0];
+      setFormData({
+        ...formData,
+        avatar: file, // Store the File object directly
+      });
+      // Create a temporary URL for preview
+      setAvatarPreview(URL.createObjectURL(file));
+    } else {
+      setFormData({
+        ...formData,
+        [name]: files
+      });
+    }
+  };
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(e);
+    console.log(formData);
     setFormSubmitted(true);
-    /*  setUserName(e.target.value)
-     setUserEmail(e.target.value)
-     setUserGithubName(e.target.value)
-     setAvatar(e.target.files[0]) */
   }
 
   return (
@@ -26,8 +37,10 @@ function App() {
 
       {formSubmitted ? <GenerateTicket /> :
         <Form
-          avatar={avatar}
+          formData={formData}
           handleSubmit={handleSubmit}
+          handleChange={handleChange}
+          avatarPreview={avatarPreview}
         />}
     </>
   )
