@@ -1,4 +1,4 @@
-function Form({ formData, handleSubmit, handleChange, avatarPreview }) {
+function Form({ handleSubmit, handleChange, avatarPreview }) {
     return (
         <form onSubmit={handleSubmit}>
             <h1> Your Journey to Coding Conf 2025 Starts Here!</h1>
