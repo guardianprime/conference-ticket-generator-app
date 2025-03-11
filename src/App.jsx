@@ -27,6 +27,7 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (formData.userName === "" || formData.userEmail === "" || formData.userGithubName === "" || formData.avatar === null) return;
     setFormSubmitted(true);
   }
 
