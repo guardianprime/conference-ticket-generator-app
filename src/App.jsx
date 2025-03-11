@@ -27,13 +27,15 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(formData);
     setFormSubmitted(true);
   }
 
   return (
     <>
-      {formSubmitted ? <GenerateTicket /> :
+      {formSubmitted ?
+        <GenerateTicket
+          formData={formData}
+        /> :
         <Form
           handleSubmit={handleSubmit}
           handleChange={handleChange}
