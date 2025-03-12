@@ -25,6 +25,12 @@ function App() {
     }
   };
 
+  function handleReset(e) {
+    e.preventDefault(); // Prevent default form submission
+    setFormData({ ...formData, avatar: null });
+    setAvatarPreview(null); // Clear the avatar preview
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     if (formData.userName === "" || formData.userEmail === "" || formData.userGithubName === "" || formData.avatar === null) return;
@@ -39,6 +45,7 @@ function App() {
           formData={formData}
         /> :
         <Form
+          handleReset={handleReset}
           handleSubmit={handleSubmit}
           handleChange={handleChange}
           avatarPreview={avatarPreview}
