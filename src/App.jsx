@@ -29,6 +29,7 @@ function App() {
     e.preventDefault();
     if (formData.userName === "" || formData.userEmail === "" || formData.userGithubName === "" || formData.avatar === null) return;
     setFormSubmitted(true);
+    console.log(formData);
   }
 
   return (
