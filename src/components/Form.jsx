@@ -1,4 +1,4 @@
-import logo from "../assets/images/logo-full.svg"
+import logo from "../assets/images/logo-full.svg";
 import UploadIcon  from '../assets/images/icon-upload.svg';
 import infoIcon from '../assets/images/icon-info.svg';
 
@@ -8,12 +8,12 @@ function Form({ handleSubmit, handleChange, avatarPreview, handleReset }) {
             <div className="flex justify-center items-center w-full h-10">
                 <img src={logo} alt="coding conf logo" />
             </div>
-            <h1 className="text-white text-extrabold text-2xl text-center"> Your Journey to Coding Conf 2025 Starts Here!</h1>
-            <p className="text-neutral-100 text-sm text-center">Secure your spot at next year's biggest coding conference.</p>
+            <h1 className="text-white text-extrabold text-3xl text-center mt-6"> Your Journey to Coding Conf 2025 Starts Here!</h1>
+            <p className="text-neutral-100 text-sm text-center mt-4">Secure your spot at next year's biggest coding conference.</p>
             <div className="mt-6">
-                <label htmlFor="dropzone-file" className="text-white"> Upload Avatar</label>
-                <div className="flex items-center justify-center w-full my-2 bg-indigo-950/90 border-2 border-neutral-300 border-dashed rounded-lg">
-                    {!avatarPreview && <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-30 cursor-pointer ">
+                <label htmlFor="dropzone-file" className="text-white">Upload Avatar</label>
+                <div className="flex items-center justify-center w-full my-2 bg-indigo-950/90 border-1 border-neutral-300 border-dashed rounded-lg">
+                    {!avatarPreview && <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-35 cursor-pointer ">
                         <div className="flex flex-col items-center justify-center pt-5 pb-6">
                             <div className="rounded-lg bg-indigo-950/95 h-12 w-12 flex justify-center items-center p-1 border border-neutral-300/50">
                                <img src={UploadIcon} alt="upload icon"/>
@@ -39,15 +39,15 @@ function Form({ handleSubmit, handleChange, avatarPreview, handleReset }) {
                 <label htmlFor="userName" className="text-white">Full Name</label>
                 <input className="border border-neutral-300 p-2 my-2 w-full text-white rounded-lg bg-indigo-950/90" id="userName" name="userName" type="text" onChange={handleChange} />
             </div>
-            <div>
+            <div className="mt-4">
                 <label htmlFor="userEmail" className="text-white">Email Address</label>
                 <input className="border border-neutral-300 p-2 my-2 w-full text-white rounded-lg bg-indigo-950/90" id="userEmail" name="userEmail" placeholder="example@email.com" type="email" onChange={handleChange} />
             </div>
-            <div>
+            <div className="mt-4">
                 <label htmlFor="userGithubName" className="text-white">GitHub Username</label>
                 <input className="border border-neutral-300 p-2 my-2 w-full text-white rounded-lg bg-indigo-950/90" id="userGithubName" name="userGithubName" type="text" placeholder="@yourusername" onChange={handleChange} />
             </div>
-            <button type="submit" className="bg-[#f57261] text-black font-bold p-4 w-full my-5 rounded-lg">Generate My Ticket</button>
+            <button type="submit" className="bg-[#f57261] text-black font-bold p-4 w-full mt-8 rounded-lg">Generate My Ticket</button>
         </form>
     )
 }
