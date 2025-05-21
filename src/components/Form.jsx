@@ -10,7 +10,7 @@ function Form({ handleSubmit, handleChange, avatarPreview, handleReset }) {
             </div>
             <h1 className="text-white text-extrabold text-2xl text-center"> Your Journey to Coding Conf 2025 Starts Here!</h1>
             <p className="text-neutral-100 text-sm text-center">Secure your spot at next year's biggest coding conference.</p>
-            <div>
+            <div className="mt-6">
                 <label htmlFor="dropzone-file" className="text-white"> Upload Avatar</label>
                 <div className="flex items-center justify-center w-full my-2 bg-indigo-950 border-2 border-neutral-300 border-dashed rounded-lg">
                     {!avatarPreview && <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-30 cursor-pointer ">
