@@ -22,13 +22,13 @@ function Form({ handleSubmit, handleChange, avatarPreview, handleReset }) {
                         </div>
                         <input id="dropzone-file" type="file" className="hidden" name="avatar" accept="image/png, image/jpeg" onChange={handleChange} />
                     </label>}
-                    {avatarPreview && <div className="w-full h-full">
+                    {avatarPreview && <div className="w-full h-full pt-5 pb-6 flex  flex-col justify-center items-center">
                         <div className="w-12 h-12.5 border-1 border-white rounded-lg">
                             <img className="w-full h-full rounded-lg" src={avatarPreview} alt="user image" />
                         </div>
-                        <div className="flex justify-between w-full">
-                            <button className="p-1 text-white text-xs bg-cyan-200 rounded-lg" onClick={(e) => handleReset(e)}>Remove image</button>
-                            <button className="p-1 text-white text-xs bg-cyan-200 rounded-lg" onClick={() => console.log("changing image")}>Change image</button>
+                        <div className="flex justify-between w-50 mt-3">
+                            <button className="p-2 text-white text-xs bg-indigo-900/50 rounded-lg " onClick={(e) => handleReset(e)}>Remove image</button>
+                            <button className="p-2 text-white text-xs bg-indigo-900/50 rounded-lg " onClick={() => console.log("changing image")}>Change image</button>
                         </div>
                     </div>}
                 </div>
