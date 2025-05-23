@@ -72,7 +72,6 @@ function Form({
                 <label
                   htmlFor="change-file"
                   className="p-2 text-white text-xs bg-indigo-900/50 rounded-lg "
-                  onClick={handleImageChange}
                 >
                   <input
                     placeholder="Change image"
@@ -80,7 +79,10 @@ function Form({
                     className="hidden"
                     name="avatar"
                     accept="image/png, image/jpeg"
+                    onChange={handleImageChange}
+                    type="file"
                   />
+                  Change image
                 </label>
               </div>
             </div>

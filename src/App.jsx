@@ -12,7 +12,7 @@ function App() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [avatarPreview, setAvatarPreview] = useState(null); // State for the preview URL
   function handleImageChange(e) {
-    handleReset(e); // Reset the form data
+    handleChange(e);
     console.log("just clicked");
   }
 
