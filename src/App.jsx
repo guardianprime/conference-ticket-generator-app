@@ -11,9 +11,9 @@ function App() {
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [avatarPreview, setAvatarPreview] = useState(null); // State for the preview URL
+
   function handleImageChange(e) {
     handleChange(e);
-    console.log("just clicked");
   }
 
   const handleChange = (event) => {
@@ -56,7 +56,7 @@ function App() {
   return (
     <>
       {formSubmitted ? (
-        <GenerateTicket formData={formData} />
+        <GenerateTicket formData={formData} avatarPreview={avatarPreview} />
       ) : (
         <Form
           handleReset={handleReset}
