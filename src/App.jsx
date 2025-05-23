@@ -3,13 +3,22 @@ import Form from "./components/Form";
 import GenerateTicket from "./components/GenerateTicket";
 
 function App() {
-  const [formData, setFormData] = useState({ userName: "", userEmail: "", userGithubName: "", avatar: null });
+  const [formData, setFormData] = useState({
+    userName: "",
+    userEmail: "",
+    userGithubName: "",
+    avatar: null,
+  });
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [avatarPreview, setAvatarPreview] = useState(null); // State for the preview URL
+  function handleImageChange(e) {
+    handleReset(e); // Reset the form data
+    console.log("just clicked");
+  }
 
   const handleChange = (event) => {
     const { name, value, files } = event.target; // get the file array and value.
-    if (name === 'avatar' && files && files[0]) {
+    if (name === "avatar" && files && files[0]) {
       const file = files[0];
       setFormData({
         ...formData,
@@ -20,7 +29,7 @@ function App() {
     } else {
       setFormData({
         ...formData,
-        [name]: value // Update the value for text inputs
+        [name]: value, // Update the value for text inputs
       });
     }
   };
@@ -33,25 +42,32 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (formData.userName === "" || formData.userEmail === "" || formData.userGithubName === "" || formData.avatar === null) return;
+    if (
+      formData.userName === "" ||
+      formData.userEmail === "" ||
+      formData.userGithubName === "" ||
+      formData.avatar === null
+    )
+      return;
     setFormSubmitted(true);
     console.log(formData);
   }
 
   return (
     <>
-      {formSubmitted ?
-        <GenerateTicket
-          formData={formData}
-        /> :
+      {formSubmitted ? (
+        <GenerateTicket formData={formData} />
+      ) : (
         <Form
           handleReset={handleReset}
           handleSubmit={handleSubmit}
           handleChange={handleChange}
           avatarPreview={avatarPreview}
-        />}
+          handleImageChange={handleImageChange}
+        />
+      )}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
