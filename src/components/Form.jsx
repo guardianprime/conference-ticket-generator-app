@@ -32,7 +32,8 @@ function Form({
           {!avatarPreview && (
             <label
               htmlFor="dropzone-file"
-              className="flex flex-col items-center justify-center w-full h-35 cursor-pointer "
+              className=" flex flex-col items-center justify-center w-full h-35 hover:bg-indigo-950/75 cursor-pointer focus:border-white"
+              tabIndex="0"
             >
               <div className="flex flex-col items-center justify-center pt-5 pb-6">
                 <div className="rounded-lg bg-indigo-950/95 h-12 w-12 flex justify-center items-center p-1 border border-neutral-300/50">
@@ -98,7 +99,7 @@ function Form({
           Full Name
         </label>
         <input
-          className="border border-neutral-300 p-2 my-2 w-full text-white rounded-lg bg-indigo-950/90"
+          className="border border-neutral-300 p-2 my-2 w-full text-white rounded-lg bg-indigo-950/90 hover:bg-indigo-950/75 cursor-pointer focus:border-white"
           id="userName"
           name="userName"
           type="text"
@@ -110,7 +111,7 @@ function Form({
           Email Address
         </label>
         <input
-          className="border border-neutral-300 p-2 my-2 w-full text-white rounded-lg bg-indigo-950/90"
+          className="border border-neutral-300 p-2 my-2 w-full text-white rounded-lg bg-indigo-950/90 hover:bg-indigo-950/75 cursor-pointer focus:border-white"
           id="userEmail"
           name="userEmail"
           placeholder="example@email.com"
@@ -123,7 +124,7 @@ function Form({
           GitHub Username
         </label>
         <input
-          className="border border-neutral-300 p-2 my-2 w-full text-white rounded-lg bg-indigo-950/90"
+          className="border border-neutral-300 p-2 my-2 w-full text-white rounded-lg bg-indigo-950/90 hover:bg-indigo-950/75 cursor-pointer focus:border-white"
           id="userGithubName"
           name="userGithubName"
           type="text"
