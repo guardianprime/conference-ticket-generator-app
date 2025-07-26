@@ -12,7 +12,7 @@ function Form({
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-multi min-h-screen max-h-max p-4 w-full"
+      className="min-h-screen max-h-max p-4 w-full md:w-1/2 lg:w-2/3 md:mx-auto lg:mx-auto"
     >
       <div className="flex justify-center items-center w-full h-10">
         <img src={logo} alt="coding conf logo" />
@@ -24,7 +24,7 @@ function Form({
       <p className="text-neutral-100 text-sm text-center mt-4">
         Secure your spot at next year's biggest coding conference.
       </p>
-      <div className="mt-6">
+      <div className="mt-6 lg:w-1/2 lg:mx-auto">
         <label htmlFor="dropzone-file" className="text-white">
           Upload Avatar
         </label>
@@ -94,7 +94,7 @@ function Form({
           photo (JPG or PNG, max size: 500KB).
         </p>
       </div>
-      <div className="mt-4">
+      <div className="mt-4 lg:w-1/2 lg:mx-auto">
         <label htmlFor="userName" className="text-white">
           Full Name
         </label>
@@ -106,7 +106,7 @@ function Form({
           onChange={handleChange}
         />
       </div>
-      <div className="mt-4">
+      <div className="mt-4 lg:w-1/2 lg:mx-auto">
         <label htmlFor="userEmail" className="text-white">
           Email Address
         </label>
@@ -119,7 +119,7 @@ function Form({
           onChange={handleChange}
         />
       </div>
-      <div className="mt-4">
+      <div className="mt-4 lg:w-1/2 lg:mx-auto">
         <label htmlFor="userGithubName" className="text-white">
           GitHub Username
         </label>
@@ -132,12 +132,14 @@ function Form({
           onChange={handleChange}
         />
       </div>
-      <button
-        type="submit"
-        className="bg-[#f57261] text-black font-bold p-4 w-full mt-8 rounded-lg"
-      >
-        Generate My Ticket
-      </button>
+      <div className="w-full lg:w-1/2 lg:mx-auto mt-8">
+        <button
+          type="submit"
+          className="bg-[#f57261] text-black font-bold p-4 w-full rounded-lg"
+        >
+          Generate My Ticket
+        </button>
+      </div>
     </form>
   );
 }

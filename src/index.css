@@ -13,8 +13,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.bg-multi {
-  background: url("assets/images/pattern-squiggly-line-top.svg") top right
+body {
+  background: url("./assets/images/pattern-squiggly-line-top.svg") top right
       no-repeat,
     url("./assets/images/pattern-circle.svg") right center no-repeat,
     url("./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") left
