@@ -19,7 +19,7 @@ function GenerateTicket({ formData, avatarPreview }) {
         <div className="w-full h-full absolute bottom-0 left-0">
           <img src={cardDesign} alt="card design" />
         </div>
-        <div className="content-div w-2/3 h-full">
+        <div className="content-div w-3/4 h-3/4 flex flex-col justify-between">
           <div className="flex justify-between">
             <img src={logo} alt="coding conf logo" />
             <div className="flex flex-col">
@@ -27,7 +27,7 @@ function GenerateTicket({ formData, avatarPreview }) {
               <span>Jan 31, 2025 / Austin, TX</span>
             </div>
           </div>
-          <div className="mt-4 flex justify-between w-full h-1/2 ">
+          <div className="flex justify-between w-full h-2/5 ">
             <div>
               <img
                 src={avatarPreview}
@@ -35,9 +35,9 @@ function GenerateTicket({ formData, avatarPreview }) {
                 className="rounded-md w-15 h-15"
               />
             </div>
-            <div className="">
+            <div className="w-2/3">
               <p className="">{formData.userName}</p>
-              <p className="flex justify-between">
+              <p className="flex flex-start">
                 <img src={githubImg} alt="github icon" />
                 <span>{formData.userGithubName}</span>
               </p>
